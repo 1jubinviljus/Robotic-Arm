@@ -1,0 +1,35 @@
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.sqlite3
+
+# ===== Arduino =====
+*.hex
+*.elf
+
+# ===== Fusion 360 & CAD backups =====
+*$AUTOSAVE$*
+*.f3d$*
+*.bak
+*.tmp
+*.lock
+~$*
+
+# ===== Simulation output =====
+*.csv
+*.gif
+*.log
+*.mp4
+
+# ===== VSCode / IDE stuff =====
+.vscode/
+.idea/
+
+# ===== OS-generated files =====
+.DS_Store
+Thumbs.db
+
+# ===== Git keepers =====
+!.gitkeep
