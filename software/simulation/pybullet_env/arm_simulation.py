@@ -14,8 +14,8 @@ p.loadURDF("plane.urdf", [0, 0, 0], [0, 0, 0, 1])
 targid = p.loadURDF("software/simulation/urdf/robotic_arm.urdf", [0, 0, 0], [0, 0, 0, 1], useFixedBase=True)
 obj_of_focus = targid
 
-# Instead of time.sleep(10), run a loop:
-for _ in range(240*10):  # roughly 10 seconds at 240 Hz
+# Instead of time.sleep(20), run a loop:
+for _ in range(240*20):  # roughly 20 seconds at 240 Hz
     p.stepSimulation()
     time.sleep(1./240.)
 
