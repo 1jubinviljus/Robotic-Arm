@@ -1,19 +1,16 @@
 #ifndef STEPPER_CONTROL_H
 #define STEPPER_CONTROL_H
 
-// set up the stepper motor pins
+// Pulley ratios (gear ratio: motor revolutions per joint revolution)
+#define Q1_PULLEY_RATIO 20   // Base (q1) 1:20
+#define Q2_PULLEY_RATIO 10   // Shoulder (q2) 1:10
+#define Q3_PULLEY_RATIO 10   // Elbow (q3) 1:10
+
 void initSteppers();
+void moveToAngles(float q1, float q2, float q3);
 
-// move the stepper motor to a specific angle
-long anglesToSteps(long q1, long q2, long q3);
-
-// converts angle about the base to motor steps
-long q1ToSteps(long q1);
-
-// converts angle about the shoulder joint to motor steps
-long q2ToSteps(long q2);
-
-// converts angle about the elbow joint to motor steps
-long q3ToSteps(long q3);
+long q1ToSteps(float q1);
+long q2ToSteps(float q2);
+long q3ToSteps(float q3);
 
 #endif
