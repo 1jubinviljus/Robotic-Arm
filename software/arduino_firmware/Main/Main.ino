@@ -6,7 +6,7 @@ void setup() {
 
 void loop() {
   // Example: move to angles (degrees)
-  moveToAngles(45, 30, -20);
+  moveToAngles(45, 30, 15);
 
   // Keep motors running toward target positions
   runSteppers();

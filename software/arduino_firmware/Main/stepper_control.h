@@ -8,7 +8,6 @@
 
 void initSteppers();
 void moveToAngles(float q1, float q2, float q3);
-void runSteppers();
 
 long q1ToSteps(float q1);
 long q2ToSteps(float q2);
