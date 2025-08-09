@@ -1,13 +1,21 @@
 #include "stepper_control.h"
+#include "pin_setup.h"
 
 void setup() {
-  initSteppers();
+
+  # Initialize and setup all pins on the board
+  initPins();
+
+  Serial.begin(9600);
+  Serial.println("Setup started...");
 }
 
 void loop() {
-  // Example: move to angles (degrees)
-  moveToAngles(45, 30, 15);
-
-  // Keep motors running toward target positions
-  runSteppers();
+  for (int i = 0; i < 200; i++) {
+    digitalWrite(STEP_PIN, HIGH);
+    delayMicroseconds(500);
+    digitalWrite(STEP_PIN, LOW);
+    delayMicroseconds(500);
+  }
+  delay(1000);
 }
