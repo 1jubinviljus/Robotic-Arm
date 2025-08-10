@@ -11,5 +11,5 @@ void setup() {
 }
 
 void loop() {
-  moveSteppers();
+  moveSteppers(90,90,90);
 }
