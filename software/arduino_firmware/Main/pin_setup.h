@@ -1,7 +1,6 @@
 #ifndef PIN_SETUP_H
 #define PIN_SETUP_H
 
-
 // Base joint (Joint 1, X-axis driver)
 #define BASE_STEP_PIN     2
 #define BASE_DIR_PIN      5
@@ -24,5 +23,7 @@
 
 // Optional: Additional actuators (servos, gripper, etc.)
 // #define GRIPPER_SERVO_PIN  14
+
+void initPins();
 
 #endif // PIN_SETUP_H

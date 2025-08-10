@@ -5,8 +5,12 @@
 void moveSteppers(){
     for (int i = 0; i < 200; i++) {
         digitalWrite(BASE_STEP_PIN, HIGH);
+        digitalWrite(SHOULDER_STEP_PIN, HIGH);
+        digitalWrite(ELBOW_STEP_PIN, HIGH);
         delayMicroseconds(500);
         digitalWrite(BASE_STEP_PIN, LOW);
+        digitalWrite(SHOULDER_STEP_PIN, LOW);
+        digitalWrite(ELBOW_STEP_PIN, LOW);
         delayMicroseconds(500);
     }
     delay(1000);

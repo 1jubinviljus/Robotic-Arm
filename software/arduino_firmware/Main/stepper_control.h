@@ -9,4 +9,6 @@
 // Motor steps per revolution
 #define MICROSTEPS 16 // Microstepping setting (e.g., 16 for 1/16 microstepping)
 
+void moveSteppers();
+
 #endif

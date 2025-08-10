@@ -3,7 +3,7 @@
 
 void setup() {
 
-  # Initialize and setup all pins on the board
+  // Initialize and setup all pins on the board
   initPins();
 
   Serial.begin(9600);
