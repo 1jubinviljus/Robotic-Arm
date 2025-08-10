@@ -1,4 +1,7 @@
+
 # Robotic Arm Project
+
+![Robotic Arm Render](media/Robotic_Arm.JPEG)
 
 An advanced, fully custom robotic arm—designed, 3D-printed, and assembled from scratch. This project features seamless integration between hardware and software: movements are planned in a Python simulation (PyBullet, URDF) and executed in real time by the physical arm, driven by an Arduino with a CNC shield.
 
