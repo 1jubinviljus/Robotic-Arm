@@ -11,6 +11,7 @@ long baseCurrentSteps = 0;
 long shoulderCurrentSteps = 0;
 long elbowCurrentSteps = 0;
 
+//Next, try moving motors at same time with bresenham's algorithm or similar to optimize movement.-------------------
 
 // Move each joint to the specified angle (degrees)
 void moveSteppers(long baseAngle, long shoulderAngle, long elbowAngle) {

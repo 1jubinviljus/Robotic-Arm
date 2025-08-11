@@ -9,14 +9,35 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0, 0, -9.81)
 p.setRealTimeSimulation(0)
 
-# load assets
+# Load assets
 p.loadURDF("plane.urdf", [0, 0, 0], [0, 0, 0, 1])
-targid = p.loadURDF("software/simulation/urdf/robotic_arm.urdf", [0, 0, 0], [0, 0, 0, 1], useFixedBase=True)
+targid = p.loadURDF(
+    "software/simulation/urdf/simple_arm.urdf",
+    [0, 0, 0],
+    [0, 0, 0, 1],
+    useFixedBase=True
+)
+
 obj_of_focus = targid
 
-# Instead of time.sleep(20), run a loop:
-for _ in range(240*20):  # roughly 20 seconds at 240 Hz
-    p.stepSimulation()
-    time.sleep(1./240.)
+# Disable specular highlights (glare)
+p.changeVisualShape(targid, -1, specularColor=[0, 0, 0])  # For the base link
+for link_index in range(p.getNumJoints(targid)):
+    p.changeVisualShape(targid, link_index, specularColor=[0, 0, 0])
 
-p.disconnect()
+# Set initial camera view, but allow mouse rotation
+p.resetDebugVisualizerCamera(
+    cameraDistance=0.5,
+    cameraYaw=45,
+    cameraPitch=-30,
+    cameraTargetPosition=[0, 0, 0.1]
+)
+
+# Hide PyBullet's side GUI
+p.configureDebugVisualizer(p.COV_ENABLE_GUI, 0)
+
+
+# Run simulation
+while True:  # infinite loop so you can rotate freely
+    p.stepSimulation()
+    time.sleep(1. / 240.)
