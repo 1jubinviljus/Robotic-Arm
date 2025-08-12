@@ -110,7 +110,7 @@
     <visual>
       <origin xyz="0 0 0.075"/>
       <geometry>
-        <cylinder length="0.15" radius="0.015"/>
+        <cylinder length="0.15" radius="0.01"/>
       </geometry>
       <material name="red">
         <color rgba="0.8 0 0 1"/>
@@ -119,9 +119,42 @@
     <collision>
       <origin xyz="0 0 0.075"/>
       <geometry>
-        <cylinder length="0.15" radius="0.015"/>
+        <cylinder length="0.15" radius="0.01"/>
       </geometry>
     </collision>
   </link>
+
+  <!-- JOINT 4: fixed joint for end effector -->
+<joint name="joint4" type="fixed">
+  <parent link="link3"/>
+  <child link="tool_link"/>
+  <origin xyz="0 0 0.15"/> <!-- offset along link3 length -->
+  <axis xyz="0 0 0"/>
+</joint>
+
+<!-- LINK tool_link: small invisible or visual tip -->
+<link name="tool_link">
+  <inertial>
+    <origin xyz="0 0 0"/>
+    <mass value="0.01"/>
+    <inertia ixx="0.00001" iyy="0.00001" izz="0.00001" ixy="0" ixz="0" iyz="0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <sphere radius="0.005"/>
+    </geometry>
+    <material name="yellow">
+      <color rgba="1 1 0 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <sphere radius="0.005"/>
+    </geometry>
+  </collision>
+</link>
+
 
 </robot>
