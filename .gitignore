@@ -33,3 +33,6 @@ Thumbs.db
 
 # ===== Git keepers =====
 !.gitkeep
+
+# ===== Virtual Environments =====
+venv39/
